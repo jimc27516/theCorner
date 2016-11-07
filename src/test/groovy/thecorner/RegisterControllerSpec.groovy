@@ -17,11 +17,6 @@ class RegisterControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
-
     void "test registerPerson submit action" () {
         when:
         params.userName = "jimbo"
