@@ -3,7 +3,6 @@ package thecorner
 class RegisterController {
 
     def index() {
-        render Person.count()
     }
 
     def registerPerson() {
@@ -16,7 +15,7 @@ class RegisterController {
                 println it
             }
         }
-        render(view: "/theCorner/landing/LandingView", model: params)
+        render(view: "index", model: params)
     }
 }
 

@@ -38,3 +38,6 @@ build/*
 gradle/*
 gradlew
 gradlew.bat
+
+# autosaved files
+~*
