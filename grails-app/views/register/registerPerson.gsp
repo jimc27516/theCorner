@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
 <head>
-    <title>LandingView</title>
+    <title>registerPerson</title>
 </head>
 <body>
 
-HomeView
+registerPerson View
 
 </body>
 </html>

@@ -2,5 +2,7 @@ package thecorner
 
 class LandingController {
 
-    def index() { }
+    def index() {
+        printlin "in LandingController index"
+    }
 }

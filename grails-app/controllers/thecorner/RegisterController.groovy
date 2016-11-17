@@ -3,6 +3,7 @@ package thecorner
 class RegisterController {
 
     def index() {
+        println "registerController index"
     }
 
     def registerPerson() {

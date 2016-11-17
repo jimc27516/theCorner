@@ -3,12 +3,15 @@ package thecorner
 
 class SecurityInterceptor {
     SecurityInterceptor() {
-        matchAll()
+        matchAll().except(controller:'Home', action:'login')
     }
 
     boolean before() {
-        println("in before Interceptor controller is ${properties.controllerName}")
-        true
+        if (!session.user && actionName != "login") {
+            redirect(controller: "Home", action: "login")
+            return false
+        }
+        return true
     }
 
     boolean after() { true }
