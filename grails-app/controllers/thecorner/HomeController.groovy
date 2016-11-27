@@ -11,7 +11,7 @@ class HomeController {
         println("in login")
 
         if (request.get) {
-            return
+            render(view: "login", model:[: ])
         }
 
         def user = params.userName
