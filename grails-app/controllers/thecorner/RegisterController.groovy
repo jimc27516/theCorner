@@ -16,7 +16,7 @@ class RegisterController {
                 println it
             }
         }
-        render(view: "index", model: params)
+        redirect(controller:'Landing', action:'index')
     }
 }
 

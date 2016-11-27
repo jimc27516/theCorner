@@ -28,7 +28,7 @@ class RegisterControllerSpec extends Specification {
         controller.registerPerson()
 
         then:
-        view == '/theCorner/landing/LandingView'
+        response.redirectedUrl == "/landing/index"
         params.userName == "jimbo"
         params.password == "1234"
         params.firstName == "Jim"
