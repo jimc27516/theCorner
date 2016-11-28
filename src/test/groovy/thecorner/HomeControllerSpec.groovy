@@ -26,22 +26,36 @@ class HomeControllerSpec extends Specification {
         model.message == "invalid user"
     }
 
-    void "login GET renders login view"() {
+    void "login GET renders login view with empty status message"() {
         when:
         request.method = 'GET'
         controller.login()
 
         then:
         view == "/home/login"
+        model.message == null
     }
 
-    void "login POST with username renders landing view"() {
+    void "login POST with username and valid pwd renders landing view"() {
         when:
         request.method = 'POST'
         params.userName = "jimmy"
+        params.password = "jimmy"
         controller.login()
 
         then:
         response.redirectedUrl == "/landing/index"
+    }
+
+    void "invalid password results in login screen with invalid message"() {
+        when:
+        request.method = 'POST'
+        params.userName = "jimmy"
+        params.password = "invalidPwd"
+        controller.login()
+
+        then:
+        view == "/home/login"
+        model.message == "invalid password"
     }
 }
