@@ -4,7 +4,6 @@ class HomeController {
 
     def index() {
         def emptyMap = [:]
-
     }
 
     def login() {

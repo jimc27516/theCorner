@@ -15,5 +15,13 @@ class LandingControllerSpec extends Specification {
     def cleanup() {
     }
 
+    void "landing page displays username"() {
+        when:
+        session.user = "jimbo"
+        controller.index()
 
+        then:
+        view == "/landing/index"
+        model.user == "jimbo"
+    }
 }

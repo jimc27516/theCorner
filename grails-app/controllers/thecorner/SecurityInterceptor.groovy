@@ -3,7 +3,7 @@ package thecorner
 
 class SecurityInterceptor {
     SecurityInterceptor() {
-        matchAll().except(controller:'Home', action:'login')
+        matchAll().except(controller:'Home', action:'login').except(controller:'Register', action:'registerPerson')
     }
 
     boolean before() {

@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>index</title>
+    <title>landing</title>
 </head>
 <body>
 
 LandingView
 
+Welcome ${user}<br/>
 
 
 </body>

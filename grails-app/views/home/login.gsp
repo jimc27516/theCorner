@@ -16,6 +16,6 @@ login
 
 </g:form>
 
-<g:link controller="register">register</g:link>
+<g:link controller="register" action="registerPerson"  >register</g:link>
 </body>
 </html>
