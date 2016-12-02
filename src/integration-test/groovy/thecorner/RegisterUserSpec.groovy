@@ -33,11 +33,7 @@ class RegisterUserSpec extends GebSpec {
             go '/'
             // $("a", href: "foo.html")
             report "login screen"
-            try {
-                $("a", href: "/register/registerPerson").click()
-            } catch (Exception ex) {
-                println("the exception is " + ex)
-            }
+            $("a", id: 'registerLink').click()
 
         then:"the register page is displayed"
             title == "landing"
