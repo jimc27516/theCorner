@@ -15,6 +15,8 @@ class RegisterController {
             p.errors.allErrors.each {
                 println it
             }
+            // something when wrong so stay on the same page
+            render(view: "error", model: [:])
         }
         redirect(controller:'Landing', action:'index')
     }

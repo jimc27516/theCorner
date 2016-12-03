@@ -7,7 +7,8 @@ class SecurityInterceptor {
     }
 
     boolean before() {
-        if (!session.user && actionName != "login") {
+        println( actionName )
+        if (!session.user && (actionName != "login" && actionName != "registerPerson")) {
             redirect(controller: "Home", action: "login")
             return false
         }
