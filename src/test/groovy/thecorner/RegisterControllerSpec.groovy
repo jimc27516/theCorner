@@ -17,7 +17,7 @@ class RegisterControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test registerPerson submit action" () {
+    void "successful registerPerson submit action" () {
         when:
         params.userName = "jimbo"
         params.password = "1234"
@@ -38,4 +38,24 @@ class RegisterControllerSpec extends Specification {
 
     }
 
+    void "failed registerPerson submit action" () {
+        when:
+//        params.userName = ""
+        params.password = "1234"
+        params.firstName = "Jim"
+        params.lastName = "Campbell"
+        params.favoriteFruit = "apple"
+
+        controller.registerPerson()
+
+        then:
+        view == "/register/error"
+        params.userName == null
+        params.password == "1234"
+        params.firstName == "Jim"
+        params.lastName == "Campbell"
+        params.favoriteFruit == "apple"
+        Person.count() == 0
+
+    }
 }

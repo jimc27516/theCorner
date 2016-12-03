@@ -18,7 +18,9 @@ class RegisterController {
             // something when wrong so stay on the same page
             render(view: "error", model: [:])
         }
-        redirect(controller:'Landing', action:'index')
+        else {
+            redirect(controller:'Landing', action:'index')
+        }
     }
 }
 
